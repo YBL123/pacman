@@ -110,9 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     squares[pacmanCurrentIndex].classList.add('pac-man')
 
     pacDotEaten()
-    //powerPelletEaten()
-    //checkForGameOver()
-    //checkForWin()
+    powerPelletEaten()
+    checkForGameOver()
+    checkForWin()
   }
 
   document.addEventListener('keyup', movePacman)
@@ -126,6 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // what happens why you eat a power-pellet
+  function powerPelletEaten() {
+    if (squares[pacmanCurrentIndex].classList.contains('power-pellet')) {
+      score += 10
+      ghosts.forEach(ghost => ghost.isScared = true)
+      //* only want them to be scared for around 10 seconds
+      setTimeout(unScareGhosts, 10000)
+      squares[pacmanCurrentIndex].classList.remove('power-pellet') //* makes it look as though the square is empty
+    }
+  }
+
+  // make the ghosts stop appearin in aquamrine
+  function unScareGhosts() {
+    ghosts.forEach(ghost => ghost.isScared = false)
+  }
+
   //* create our Ghost template
   class Ghost {
     constructor(className, startIndex, speed) {
@@ -134,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.speed = speed
       this.currentIndex = startIndex
       this.timerid = NaN
+      this.isScared = false
     }
   }
 
@@ -147,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //* draw my ghosts onto the grid
   ghosts.forEach(ghost => {
     squares[ghost.currentIndex].classList.add(ghost.className) //* add className ghost
-    squares[ghost.currentIndex].classList.add('ghost') 
+    squares[ghost.currentIndex].classList.add('ghost')
   })
 
   //* move ALL the ghosts randomly
@@ -155,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //* write the function to move the ghosts
   function moveGhost(ghost) {
-    const directions = [ -1, +1, width, -width ]
+    const directions = [-1, +1, width, -width]
     let direction = directions[Math.floor(Math.random() * directions.length)]
 
-    ghost.timerId = setInterval(function() {
+    ghost.timerId = setInterval(function () {
       //if the next sqaure your ghost is going to go in does NOT containt a wall and a ghost
       if (!squares[ghost.currentIndex + direction].classList.contains('wall') && !squares[ghost.currentIndex + direction].classList.contains('ghost')) {
         //you can go here
@@ -168,14 +185,46 @@ document.addEventListener('DOMContentLoaded', () => {
         ghost.currentIndex += direction
         //redraw the ghost in the new safe space
         squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
-
         // else fine a new direction to try
       } else direction = directions[Math.floor(Math.random() * directions.length)]
-      
 
+      //* if the ghost is currently scared
+      if (ghost.isScared) {
+        squares[ghost.currentIndex].classList.add('scared-ghost')
+      }
 
+      //* if the ghost is in scared mode and pacman runs into it aka eats it..
+      if (ghost.isScared && squares[ghost.currentIndex].classList.contains('pac-man')) {
+        squares[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scared-ghost')
+        ghost.currentIndex = ghost.startIndex //* we want it to go back to it's starting position
+        score += 100 //* awarded to pacman for eating the ghost
+        squares[ghost.currentIndex].classList.add(ghost.className, 'ghost')
+      }
+      checkForGameOver() //* moved through the move pacman function
     }, ghost.speed)
   }
-  
+
+  //* check for a game over
+  function checkForGameOver() {
+    if (squares[pacmanCurrentIndex].classList.contains('ghost') && !squares[pacmanCurrentIndex].classList.contains('scared-ghost')) {
+      //* above: checks if it's not a scared ghost in order for pacman to die 
+      ghosts.forEach(ghost => clearInterval(ghost.timerId))
+      document.removeEventListener('keyup', movePacman)
+      // setTimeout(function () {
+      //   alert('Game Over!')
+      // }, 500)
+      scoreDisplay.innerHTML = ' GAME OVER'
+    }
+  }
+
+  //* check for a win
+  function checkForWin() {
+    if (score === 274) {
+      ghosts.forEach(ghost => clearInterval(ghost.timerId))
+      document.removeEventListener('keyup', movePacman)
+      scoreDisplay.innerHTML = ' YOU WON!'
+    }
+  }
+
 
 })
