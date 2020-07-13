@@ -1,9 +1,19 @@
+html {
+  background-color: cornflowerblue;
+}
+
+@font-face {
+  font-family: 'machine-gunk';
+  src: url('../fonts/MachineGunk.ttf')
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
   width: 560px;
   height: 560px;
   border: solid black;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .grid div {
@@ -12,8 +22,8 @@
 }
 
 .pac-dot {
-  background-color: black;
-  border: 5px solid white;
+  background-color: gold;
+  border: 5px solid cornflowerblue;
   box-sizing: border-box;
 }
 
@@ -55,7 +65,54 @@
 
 
 .pac-man {
-  background-color: yellow;
-  border-radius: 10px;
+  background-image: url('/assets/pichuu.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  /* background-color: yellow;
+  border-radius: 10px; */
 }
 
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.puchu {
+  width: 300px;
+  padding: 30px;
+  margin-top: 60px;
+  padding-bottom: 0;
+}
+
+.puchi {
+  width: 350px;
+  padding: 30px;
+  margin-top: 100px;
+  padding-bottom: 0;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  margin-left: 60px;
+}
+
+.title {
+  font-family: 'machine-gunk';
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  font-size: 80px;
+  letter-spacing: 8px;
+}
+
+.title2 {
+  font-family: 'machine-gunk';
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: 80px;
+  letter-spacing: 8px;
+}
