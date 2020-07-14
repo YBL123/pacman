@@ -143,6 +143,8 @@ html {
   justify-content: center;
   margin-left: 60px;
   font-family: 'atari-classic-chunky';
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 
@@ -172,11 +174,11 @@ html {
 }
 
 
-.title2 {
+/* .title2 {
   font-family: 'machine-gunk';
   display: flex;
   justify-content: center;
   margin: 0;
   font-size: 80px;
   letter-spacing: 8px;
-}
+} */
