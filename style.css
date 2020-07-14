@@ -22,9 +22,15 @@ html {
 }
 
 .pac-dot {
-  background-color: gold;
-  border: 5px solid cornflowerblue;
-  box-sizing: border-box;
+  background-image: url('/assets/XDZT.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  border: 0px;
+  /* border: 5px solid cornflowerblue;
+  border-radius: 50%;
+  box-sizing: border-box; */
 }
 
 .wall {
@@ -32,8 +38,15 @@ html {
 }
 
 .power-pellet {
-  background-color: pink;
-  border-radius: 10px;
+  background-image: url('/assets/33Ho.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  background-color: cornflowerblue;
+  border: 0px;
+  /* background-color: pink;
+  border-radius: 80%; */
+
 }
 
 .blinky {
@@ -41,8 +54,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  /* background-color: red;
-  border: 0px; */
+  background-color: cornflowerblue;
+  border: 0px;
 }
 
 .pinky {
@@ -50,8 +63,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  /* background-color: pink;
-  border: 0px; */
+  background-color: cornflowerblue;
+  border: 0px;
 }
 
 .inky {
@@ -59,8 +72,8 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  /* background-color: cyan;
-  border: 0px; */
+  background-color: cornflowerblue;
+  border: 0px;
 }
 
 .clyde {
@@ -68,13 +81,23 @@ html {
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
-  /* background-color: orange;
-  border: 0px; */
+  background-color: cornflowerblue;
+  border: 0px;
 }
 
 .scared-ghost {
-  background-color: aquamarine;
-  border: 0px;
+  background-color: gold;
+  border-radius: 20px;
+  /* position: absolute; */
+  /* top: calc(5% - 3px);
+  left: calc(5% - 2px); */
+  width: 2px;
+  height: 2px;
+  background-color: cornflowerblue;
+  box-shadow:
+    0 0 3px 3px #fff,
+    0 0 1px 3px #f0f,
+    0 0 3px 3px #0ff;
 }
 
 
