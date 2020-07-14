@@ -37,23 +37,39 @@ html {
 }
 
 .blinky {
-  background-color: red;
-  border: 0px;
+  background-image: url('/assets/Charmeleon.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  /* background-color: red;
+  border: 0px; */
 }
 
 .pinky {
-  background-color: pink;
-  border: 0px;
+  background-image: url('/assets/pinky.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  /* background-color: pink;
+  border: 0px; */
 }
 
 .inky {
-  background-color: cyan;
-  border: 0px;
+  background-image: url('/assets/Azu.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  /* background-color: cyan;
+  border: 0px; */
 }
 
 .clyde {
-  background-color: orange;
-  border: 0px;
+  background-image: url('/assets/leaf.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  /* background-color: orange;
+  border: 0px; */
 }
 
 .scared-ghost {
@@ -65,7 +81,7 @@ html {
 
 
 .pac-man {
-  background-image: url('/assets/pichuu.gif');
+  background-image: url('/assets/pi.gif');
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
