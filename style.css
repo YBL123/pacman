@@ -34,7 +34,8 @@ html {
 }
 
 .wall {
-  background-color: darkblue;
+  background-color: #161b79;
+  box-shadow: 0 0 20px 0 rgba(76, 175, 221, 0.2);
 }
 
 .power-pellet {
