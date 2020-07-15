@@ -17,7 +17,7 @@ html {
   flex-wrap: wrap;
   width: 560px;
   height: 560px;
-  border: solid black;
+  border: solid paleturquoise;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -127,8 +127,9 @@ html {
 .puchu {
   width: 300px;
   padding: 30px;
-  margin-top: 60px;
+  /* margin-top: 60px; */
   padding-bottom: 0;
+  padding-top: 0;
 }
 
 .puchi {
@@ -143,10 +144,16 @@ html {
   justify-content: center;
   margin-left: 60px;
   font-family: 'atari-classic-chunky';
-  color: whitesmoke;
+  color: rgb(255, 252, 211);
   text-shadow: 2px 2px 4px #000000;
 }
 
+.keys {
+  width: 200px;
+  display: flex;
+  padding-left: 50px;
+  /* margin-top: 35px; */
+}
 
 .title {
   font-family: 'machine-gunk';
@@ -173,12 +180,31 @@ html {
   }
 }
 
-
-/* .title2 {
+/* .title {
   font-family: 'machine-gunk';
+  color: pink;
+  font-size: 7vw;
+  line-height: 9vw;
+  text-shadow: 0 0 3vw pink;
   display: flex;
   justify-content: center;
-  margin: 0;
-  font-size: 80px;
-  letter-spacing: 8px;
+  margin-top: 0;
+}
+.title {
+  animation: glow 1.2s ease infinite;
+  -moz-animation: glow 1.2s ease infinite;
+  -webkit-animation: glow 1.2s ease infinite;
+}
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw pink, 0 0 3vw pink, 0 0 10vw pink, 0 0 10vw pink, 0 0 .4vw purple, .5vw .5vw .1vw purple;
+    color: yellow;
+  }
+  50% {
+    text-shadow: 0 0 .5vw palevioletred, 0 0 1.5vw palevioletred, 0 0 5vw palevioletred, 0 0 5vw palevioletred, 0 0 .2vw palevioletred, .5vw .5vw .1vw #40340A;
+    color: gold;
+  }
 } */
+
+
