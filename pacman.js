@@ -71,9 +71,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //* starting position of pac-man
   let pacmanCurrentIndex = 490
-
+  // let pacmanCurrentIndex = 502
   squares[pacmanCurrentIndex].classList.add('pac-man')
 
+  //! from here
+  // let blinkyCurrentIndex = 197
+  // squares[blinkyCurrentIndex].classList.add('blinky')
+
+  // //* get Coordinates of pacman or blinky
+  // function getCoordinates (index) {
+  //   return [index % width, Math.floor(index / width)]
+  // }
+  // console.log(getCoordinates(502))
+
+  // //* move Blinky
+  // function moveBlinky () {
+  //   const directions = [ -1, +1, +width, -width ]
+  //   let direction = directions[Math.floor(Math.random() * direction.length)]
+  //   let ghostTimerId = NaN
+
+  //   ghostTimerId = setInterval(() => {
+  //     if (!squares[blinkyCurrentIndex + direction].classList.contains('wall')) {
+  //       // remove ghost class
+  //       squares[blinkyCurrentIndex].classList.remove('blinky')
+  //       blinkyCurrentIndex += direction
+  //       squares[blinkyCurrentIndex].classList.add('blinky')
+  //     } else direction = directions[Math.floor(Math.random() * direction.length)]
+  //   }, 300)
+  // }
+  // moveBlinky()
+  //! to here
   //* move pacman
 
   function movePacman(event) {
